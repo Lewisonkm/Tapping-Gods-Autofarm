@@ -1,0 +1,60 @@
+wait()
+getgenv().toggle = true -- Change this to false to pause 
+while getgenv().toggle do
+local Event = game:GetService("ReplicatedStorage").Events.Tap
+Event:FireServer()
+wait()
+end)
+
+getgenv().toggle = true -- Change this to false to stop 
+while getgenv().toggle do
+local A_1 = "Starter Egg" --Change this to any egg you would like :)
+local A_2 = -- if you have the 'Triple open gamepass change the 2 to 5 
+{
+	["Legendary"] = false, 
+	["Secret"] = false, 
+	["Common"] = false, 
+	["Epic"] = false, 
+	["Godly"] = false, 
+	["Uncommon"] = false, 
+	["Rare"] = false
+}
+local Event = game:GetService("ReplicatedStorage").Events.OpenEgg
+Event:FireServer(A_1, A_5)
+wait()
+end)
+
+wait()
+getgenv().toggle = true -- Change this to false to pause it 
+while getgenv().toggle do
+local A_1 = 1 -- change the 1 to any number beetween 1-17
+local Event = game:GetService("ReplicatedStorage").Events.Rebirth
+Event:FireServer(A_1) 
+wait()
+end)
+
+wait()
+getgenv().toggle = true --Change this to false to stop
+while getgenv().toggle do
+local A_1 = "CraftAll"
+local Event = game:GetService("ReplicatedStorage").Events.PetAction
+Event:InvokeServer(A_1)
+wait()
+end)
+
+wait(10) -- Change this to how long you want it to wait before auto equiping
+getgenv().toggle = true -- Change this to false to pause
+while getgenv().toggle do
+local A_1 = "EquipBest"
+local Event = game:GetService("ReplicatedStorage").Events.PetAction
+Event:InvokeServer(A_1)
+wait(10)
+end)
+
+local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+local location = CFrame.new(-686,587,-524)
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait(0.1)
+pl.CFrame = location
+end)
